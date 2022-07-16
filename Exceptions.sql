@@ -43,3 +43,11 @@ a number(2);
 begin
 a:=10000;
 end;
+//DUP_VAL_ON_INDEX
+begin
+insert into sailors values(31,'newDustin',10,56.6);
+dbms_output.put_line('Row Inserted');
+exception
+when dup_val_on_index then
+dbms_output.put_line('DUP_VAL_ON_INDEX:  '||sqlerrm);
+end;
